@@ -13,7 +13,7 @@ let food = {
 }
 function addBG(){
     context.fillStyle = "lightgreen";//background collor
-    context.fillRect(0, 0 , 16 * box, 16*box);
+    context.fillRect(0, 0 , 16*box, 16*box);
 }
 
 function addSnake(){
@@ -41,15 +41,15 @@ function update (event){
 function startGame(){
     
     //limit the movement on canvas 
-    if(snake[0].x > 15*box && direction == "right") snake[0].x = 0;
-    if(snake[0].x < 0 && direction == "left") snake[0].x = 16*box;
-    if(snake[0].y > 15*box && direction == "down") snake[0].y = 0;
-    if(snake[0].y < 0 && direction == "up") snake[0].y = 16*box;
+    if(snake[0].x > 15*box) snake[0].x = 0;
+    if(snake[0].x < 0) snake[0].x = 16*box;
+    if(snake[0].y > 15*box) snake[0].y = 0;
+    if(snake[0].y < 0) snake[0].y = 16*box;
 
     for(let i = 1; i<snake.length;i++){
         if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
             clearInterval(game)
-            alert("YOU KILLED THE SNAKE :(");
+            alert("YOU KILLED THE SNAKE, Press 'F5' to try again");
         }
     } 
 
